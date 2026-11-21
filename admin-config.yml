@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: growthofawoman2/growthofawoman
+  branch: main
+
+site_url: https://growthofawoman.com
+display_url: https://growthofawoman.com
+media_folder: "uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog posts"
+    label_singular: "Blog post"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{date | date('MMM D, YYYY')}}{{draft | ternary(' (draft)', '')}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "MMM D, YYYY", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Category", name: "category", widget: "select", options: ["Marriage", "Self-Care", "Curly Girls", "Family & Legacy", "History & Heritage"] }
+      - { label: "Opening line (shows on the blog page and in bold at the top)", name: "summary", widget: "text" }
+      - { label: "Header picture (optional)", name: "image", widget: "image", required: false }
+      - { label: "Post", name: "body", widget: "markdown" }
+      - { label: "Let's talk question (optional)", name: "question", widget: "string", required: false }
+      - { label: "Save as draft (not on the website yet)", name: "draft", widget: "boolean", default: false }

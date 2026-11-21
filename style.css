@@ -1,0 +1,98 @@
+:root{
+  --bg:#EEE7EB; --card:#F6E9EC; --ink:#5A4253; --muted:#8E7584;
+  --plum:#9C7A8E; --plum-deep:#7A5A6D; --gold:#B49A62; --line:#E2CDD3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;font-size:17px;line-height:1.7}
+a{color:var(--plum-deep)}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Playfair Display",Georgia,serif}
+.script{font-family:"Great Vibes",cursive;color:var(--gold);font-weight:400}
+
+/* header */
+.topbar{background:var(--plum-deep);color:#F3ECF0;text-align:center;font-size:13px;letter-spacing:.06em;padding:8px 16px}
+header.site{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;flex-wrap:wrap}
+.brand{text-decoration:none;color:var(--ink);line-height:1.1}
+.brand b{font-family:"Playfair Display",Georgia,serif;font-size:24px;font-weight:600;display:block}
+.brand small{font-size:11px;letter-spacing:.22em;color:var(--gold)}
+nav.main{display:flex;gap:6px;flex-wrap:wrap}
+nav.main a{text-decoration:none;color:var(--ink);font-size:15px;padding:6px 12px;border-radius:999px}
+nav.main a:hover,nav.main a.on{background:var(--bg);color:var(--plum-deep)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--ink);font:inherit}
+
+/* sections */
+section{padding:72px 0}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600;color:var(--ink);line-height:1.15;margin:0 0 16px}
+h1{font-size:clamp(40px,7vw,72px)}
+h2{font-size:clamp(30px,4.5vw,44px)}
+h3{font-size:22px}
+.lead{font-size:19px;color:var(--muted);max-width:640px}
+.btn{display:inline-block;background:var(--plum);color:#fff;text-decoration:none;padding:12px 24px;border-radius:999px;font-weight:500;border:0;font:inherit;cursor:pointer}
+.btn:hover{background:var(--plum-deep)}
+.btn.ghost{background:transparent;color:var(--plum-deep);border:1px solid var(--plum)}
+.btn.ghost:hover{background:var(--card)}
+
+.hero{padding:96px 0 80px;text-align:center}
+.hero .tag{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:8px 0 20px}
+.hero .lead{margin:0 auto 32px}
+.orn{color:var(--gold);letter-spacing:.6em;margin:0 0 18px}
+
+.quote{background:var(--card);text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.quote blockquote{margin:0 auto;max-width:760px;font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:clamp(24px,3.6vw,34px);line-height:1.35}
+.quote p{color:var(--muted);margin:16px 0 0}
+
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.card .num{font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 8px}
+.card p{margin:0;color:var(--muted)}
+.card .more{display:inline-block;margin-top:14px;font-size:15px;text-decoration:none}
+
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;align-items:center}
+.cover{border-radius:14px;border:1px solid var(--line);max-width:340px;margin:0 auto}
+.price{color:var(--muted);font-size:15px;margin:0 0 20px}
+.soon{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:var(--bg);color:var(--plum-deep);padding:4px 12px;border-radius:999px;margin-bottom:12px}
+.placeholder{aspect-ratio:2/3;border-radius:14px;border:1px dashed var(--plum);display:flex;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:20px;background:var(--card);margin-bottom:16px}
+
+.prose{max-width:720px}
+.prose p{margin:0 0 20px}
+
+.post{display:block;text-decoration:none;color:inherit}
+.post .meta{font-size:13px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}
+.post:hover h3{color:var(--plum-deep)}
+
+form.poll fieldset{border:0;padding:0;margin:0 0 16px}
+form.poll legend{font-family:"Playfair Display",Georgia,serif;font-size:21px;font-weight:600;margin-bottom:12px}
+form.poll label{display:flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fff;cursor:pointer}
+form.poll input{accent-color:var(--plum)}
+.anon{font-size:13px;color:var(--muted);margin:0 0 14px}
+
+footer.site{background:var(--plum-deep);color:#EADDE4;padding:56px 0 32px;margin-top:0}
+footer.site a{color:#F3ECF0;text-decoration:none}
+footer.site .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+footer.site h4{font-family:"Playfair Display",Georgia,serif;color:#fff;font-size:22px;margin:0 0 8px}
+footer.site ul{list-style:none;padding:0;margin:0}
+footer.site li{margin:0 0 6px}
+footer.site .copy{border-top:1px solid rgba(255,255,255,.18);margin-top:36px;padding-top:18px;font-size:13px}
+
+.note{background:#FFF7E6;border:1px dashed var(--gold);color:#6B5530;border-radius:12px;padding:10px 14px;font-size:14px;margin:0 0 20px}
+
+@media (max-width:820px){
+  .g3,.g2,.split,footer.site .cols{grid-template-columns:1fr}
+  section{padding:56px 0}
+  .menu-btn{display:block}
+  nav.main{display:none;width:100%;padding-bottom:12px}
+  nav.main.open{display:flex;flex-direction:column}
+}
+.card .cover{max-width:100%;width:100%}
+.post-hero{background-size:cover!important}
+@media (max-width:820px){.post-hero{background-position:10% center!important}}
+.signup label{display:block;font-size:14px;color:var(--muted);margin:14px 0 4px}
+.signup input[type=text],.signup input[type=email]{display:block;width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin-top:6px;background:#fff}
+.signup .btn{margin-top:18px;width:100%}
+.signup h3{font-size:28px;margin:4px 0 8px}
