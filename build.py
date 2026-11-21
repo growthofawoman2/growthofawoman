@@ -325,13 +325,33 @@ def poll(name, q, opts):
 <p class="anon">Your answer is anonymous.</p>
 <button class="btn" type="submit">Submit</button></form>'''
 
+
+TA = 'style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;margin-top:8px;background:#fff;box-sizing:border-box"'
+def radios(field, opts):
+    return "".join(f'<label><input type="radio" name="{field}" value="{o}"> {o}</label>' for o in opts)
+
+def children_survey():
+    return f'''<form class="card poll" name="children-books-survey" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thank-you.html" style="grid-column:1/-1">
+<input type="hidden" name="form-name" value="children-books-survey">
+<p style="display:none"><label>Leave this empty: <input name="bot-field"></label></p>
+<p class="eyebrow">Children's books survey</p>
+<fieldset><legend>1. What type of children's content would you like to see?</legend>{radios("content-type", ["Picture books", "Early readers", "Activity and coloring books", "Islamic stories and lessons", "Other"])}
+<input type="text" name="content-type-other" placeholder="Other (tell us)" {TA}></fieldset>
+<fieldset><legend>2. Are you okay with facial images?</legend>{radios("facial-images", ["Yes", "No, I prefer faceless", "Either is fine"])}</fieldset>
+<fieldset><legend>3. Where would be the first place you would look for Islamic children's books?</legend>{radios("where-look", ["Amazon", "Bookstore", "Masjid or Islamic event", "Library", "Online shop or social media"])}</fieldset>
+<fieldset><legend>4. What ages are the children you read to?</legend>{radios("ages", ["0–3", "4–6", "7–9", "10+"])}</fieldset>
+<fieldset><legend>5. What do you look for most in a children's book?</legend>{radios("look-for", ["Faith and Islamic values", "Characters who look like my kids", "Everyday life, like hair or family", "Fun and adventure"])}</fieldset>
+<fieldset><legend>6. What story do you wish existed for your child?</legend><textarea name="wish-story" rows="4" {TA}></textarea></fieldset>
+<p class="anon">Your answers are anonymous.</p>
+<button class="btn" type="submit">Submit</button></form>'''
+
 page("polls.html", "Polls | Growth of a Woman", f"""
 <section><div class="wrap">
   <p class="eyebrow">Polls</p>
   <h1 style="font-size:clamp(36px,6vw,56px)">Share your voice</h1>
   <p class="lead" style="margin-bottom:32px">Your answer is anonymous.</p>
   <div class="grid g2">
-  {poll("children-books-faces", "For your children's books, which illustrations do you prefer?", ["Characters with full faces", "Faceless characters", "Either is fine"])}
+  {children_survey()}
   {poll("hair-under-hijab", "What's your biggest hair struggle under your hijab?", ["Breakage or thinning edges", "Dryness", "Itchy scalp or buildup", "Tangles and matting", "No time to care for it"])}
   {poll("marriage-journey", "Where are you in your search for a husband?", ["Not looking yet, preparing myself", "Actively looking", "Talking to someone", "Engaged or intended", "Married or divorced, here to learn or share"])}
   </div>
